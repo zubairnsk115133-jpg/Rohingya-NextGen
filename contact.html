@@ -136,54 +136,11 @@
     footer p {
       font-size: 14px;
     }
-    .header-simple{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:10px 16px;
-  background: #ffffff;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
-  position:relative;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
-
-/* Back button */
-.back-btn{
-  display:inline-grid;
-  place-items:center;
-  width:40px;
-  height:40px;
-  padding:6px;
-  border:0;
-  background:transparent;
-  border-radius:8px;
-  cursor:pointer;
-  transition:background .12s, transform .08s;
-  color:#111;
-}
-.back-btn:focus{ outline: 2px solid rgba(0,123,255,0.25); outline-offset:2px; }
-.back-btn:hover{ background: rgba(0,0,0,0.04); transform: translateX(-1px); }
-
-/* Title */
-.title{
-  font-size:16px;
-  margin:0;
-  font-weight:600;
-  color:#111;
-}
+    
   </style>
 </head>
 <body>
-<header class="header-simple">
-  <button class="back-btn" aria-label="Go back" onclick="goBack()">
-    <!-- SVG arrow -->
-    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
 
-  <h1 class="title">Page Title</h1>
-</header>
   <header>
     <h1>Contact Us</h1>
   </header>
@@ -222,15 +179,7 @@
   <footer>
     <p>&copy; 2025 Ro NextGen | All Rights Reserved</p>
   </footer>
-<script>
-function goBack(){
-  if (window.history.length > 1){
-    window.history.back();
-  } else {
-    // fallback - change to a safe URL for your site
-    window.location.href = '/';
-  }
-}
-</script>
+
 </body>
+
 </html>
