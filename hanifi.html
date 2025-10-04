@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="rh" dir="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rohingya Book — Sample</title>
+
+  <!-- Fonts: Latin + Arabic-friendly fallbacks. You can change as needed. -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --max-width: 780px;
+      --gutter: 24px;
+      --muted: #666;
+      --accent: #0b6efd;
+      --page-bg: #fffdfb;
+      --paper-shadow: 0 8px 24px rgba(20,20,30,0.08);
+    }
+
+    /* Basic reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: "Noto Sans Tamil", "Noto Naskh Arabic", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#f2f4f8 0%, #eef2f6 100%);
+      padding:40px;
+      display:flex;
+      justify-content:center;
+      color:#222;
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* Book wrapper (centered page) */
+    .book{
+      width:100%;
+      max-width: calc(var(--max-width) + var(--gutter)*2);
+      display:flex;
+      gap:var(--gutter);
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    /* Single page card */
+    .page{
+      background:var(--page-bg);
+      width:var(--max-width);
+      padding:40px;
+      box-shadow:var(--paper-shadow);
+      border-radius:12px;
+    }
+
+    /* Cover */
+    .cover{
+      text-align:center;
+      padding:56px 28px;
+      border-radius:10px;
+      background: linear-gradient(180deg, rgba(11,110,253,0.06), rgba(11,110,253,0.02));
+      margin-bottom:28px;
+    }
+    .cover h1{font-size:2.2rem;margin:0 0 6px 0;letter-spacing:0.4px}
+    .cover p.lead{margin:0 0 18px 0;color:var(--muted)}
+    .cover .meta{font-size:0.95rem;color:var(--muted)}
+    .cover .cover-image{
+      width:160px;height:220px;border-radius:6px;object-fit:cover;margin:18px auto 0;display:block;box-shadow:0 10px 30px rgba(10,10,20,0.06);
+    }
+
+    /* Metadata row */
+    .meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px;color:var(--muted);font-size:0.95rem}
+    .meta-row span{display:inline-flex;align-items:center;gap:8px}
+
+    /* Table of contents */
+    .toc{margin:6px 0 28px 0;padding:18px;border-radius:8px;background:rgba(0,0,0,0.02)}
+    .toc h3{margin:0 0 12px 0}
+    .toc ol{margin:0;padding-right:1.1rem}
+    .toc a{color:inherit;text-decoration:none}
+    .toc li{margin:6px 0;color:#123}
+
+    /* Chapter */
+    .chapter{margin-bottom:32px}
+    .chapter h2{font-size:1.45rem;margin:0 0 8px 0}
+    .chapter .subtitle{color:var(--muted);margin-bottom:12px;font-size:0.98rem}
+
+    /* Paragraph styling */
+    p{margin:0 0 14px 0;orphans:3;widows:3}
+    .dropcap:first-letter{float:left;font-size:3.2rem;line-height:0.72;margin-right:10px;font-weight:700;color:var(--accent);font-family:"Noto Sans Tamil","Noto Naskh Arabic", serif}
+
+    /* Footnote / small print */
+    .small{font-size:0.9rem;color:var(--muted)}
+
+    /* Controls for RTL / LTR */
+    .ltr{direction:ltr;text-align:left}
+    .rtl{direction:rtl;text-align:justify}
+
+    /* Two-column for reading wide screens (optional) */
+    @media(min-width:1100px){
+      .chapter .content.two-col{
+        column-count:2;
+        column-gap:36px;
+      }
+    }
+
+    /* Print-friendly */
+    @media print{
+      body{background:white;padding:0}
+      .book{padding:0}
+      .page{box-shadow:none;border-radius:0;padding:28mm;max-width:100%}
+      .no-print{display:none}
+    }
+
+    /* Small utility */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+
+  <div class="book">
+
+    <article class="page rtl" id="book" lang="ar">
+      <!-- set class .rtl for Rohingya Arabic script (Hanifi) OR .ltr for Latin Rohingyalish -->
+      <header class="cover">
+        <img src="banner.png" alt="Book cover" class="cover-image" />
+        <h1>Hanifi Script</h1>
+        <p class="lead">You can read Rohingya Book only view</p>
+        <div class="meta">
+        </div>
+      </header>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h3>About</h3>
+        <ol>
+          Hanifi is a written form of the Rohingya dialect developed in the 1980s by Rohingya scholar, Mohammed Hanif. In 2024, Children on the Edge received permission to pilot using the Hanifi script to facilitate education, marking the first time Rohingya students were permitted to use their mother tongue in the classroom
+          </ol>
+      </nav>
+
+      <section id="ch1" class="chapter">
+        <h2>অধ্যায় ১ — পরিচিতি</h2>
+        <div class="subtitle">সংক্ষিপ্ত বিবরণ</div>
+        <div class="content">
+          <p class="dropcap">এই অধ্যায়ে আমরা রোহিঙ্গা ভাষা ও ঐতিহ্য সম্পর্কে সংক্ষিপ্ত পরিচিতি দেব। টেক্সটটি ডান থেকে বাঁ দিকে চলবে যদি আপনি .rtl ক্লাসটি ব্যবহার করেন। আপনি চাইলে <em>dir="rtl"</em> বা <em>dir="ltr"</em> দিয়ে উপযুক্ত দিকও সেট করতে পারেন।</p>
+          <p>উদাহরণস্বরূপ: এই বাক্যটি হানিফি আরবি লিপি ব্যবহার করলে পাঠকের অভিজ্ঞতা আরও স্বতন্ত্র হবে।</p>
+        </div>
+      </section>
+
+      <section id="ch2" class="chapter">
+        <h2>অধ্যায় ২ — গল্প</h2>
+        <div class="content two-col">
+          <p>গল্প ১: (এখানে আপনার গল্প লিখুন)। দীর্ঘ অনুচ্ছেদ থাকলে, ব্রাউজারে দুই কলাম মোড ভাল দেখায়।</p>
+          <p>গল্প ২: (আরেকটি গল্প) — আপনি চাইলে প্রতিটি অধ্যায়ে ছবি, কোট বা উদ্ধৃতি যোগ করতে পারেন।</p>
+        </div>
+      </section>
+
+      <section id="ch3" class="chapter">
+        <h2>অধ্যায় ৩ — কবিতা</h2>
+        <div class="content">
+          <p>কবিতা ১: আমি নদীর ধারার মতো...</p>
+          <p class="small">অনুবাদ / নোট: এই স্থানে ছোট নোট যোগ করুন।</p>
+        </div>
+      </section>
+
+      <footer class="center muted small no-print" style="margin-top:20px">
+        প্রিন্ট-বান্ধব সংস্করণ: Ctrl+P দিয়ে প্রিন্ট করুন বা PDF হিসেবে সেভ করুন
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
