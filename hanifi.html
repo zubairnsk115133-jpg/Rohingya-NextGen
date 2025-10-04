@@ -17,6 +17,18 @@
       --page-bg: #fffdfb;
       --paper-shadow: 0 8px 24px rgba(20,20,30,0.08);
     }
+    .btn{
+        padding: 10px;
+        border-radius: 5px;
+         background-color: chocolate;
+         color: #f2f4f8;
+    }
+    .btnc{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+       
+    }
 
     /* Basic reset */
     *{box-sizing:border-box}
@@ -64,6 +76,8 @@
     .cover .meta{font-size:0.95rem;color:var(--muted)}
     .cover .cover-image{
       width:160px;height:220px;border-radius:6px;object-fit:cover;margin:18px auto 0;display:block;box-shadow:0 10px 30px rgba(10,10,20,0.06);
+      border-style: solid;
+      color: chocolate;
     }
 
     /* Metadata row */
@@ -112,6 +126,57 @@
     /* Small utility */
     .muted{color:var(--muted)}
     .center{text-align:center}
+    /* Button styling */
+  .open-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  /* The popup container - hidden by default */
+  .dialogue-box {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Close button inside the popup */
+  .close-btn {
+    margin-top: 15px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* Optional: dark overlay behind the popup */
+  .overlay {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 500;
+  }
+   
   </style>
 </head>
 <body>
@@ -121,9 +186,9 @@
     <article class="page rtl" id="book" lang="ar">
       <!-- set class .rtl for Rohingya Arabic script (Hanifi) OR .ltr for Latin Rohingyalish -->
       <header class="cover">
-        <img src="banner.png" alt="Book cover" class="cover-image" />
+        <img src="lang.jpg" alt="Book cover" class="cover-image" />
         <h1>Hanifi Script</h1>
-        <p class="lead">You can read Rohingya Book only view</p>
+        <p class="lead">“You can learn the Rohingya language on this website”</p>
         <div class="meta">
         </div>
       </header>
@@ -136,34 +201,41 @@
       </nav>
 
       <section id="ch1" class="chapter">
-        <h2>অধ্যায় ১ — পরিচিতি</h2>
-        <div class="subtitle">সংক্ষিপ্ত বিবরণ</div>
+        <h2></h2>
+        <div class="subtitle"></div>
         <div class="content">
-          <p class="dropcap">এই অধ্যায়ে আমরা রোহিঙ্গা ভাষা ও ঐতিহ্য সম্পর্কে সংক্ষিপ্ত পরিচিতি দেব। টেক্সটটি ডান থেকে বাঁ দিকে চলবে যদি আপনি .rtl ক্লাসটি ব্যবহার করেন। আপনি চাইলে <em>dir="rtl"</em> বা <em>dir="ltr"</em> দিয়ে উপযুক্ত দিকও সেট করতে পারেন।</p>
-          <p>উদাহরণস্বরূপ: এই বাক্যটি হানিফি আরবি লিপি ব্যবহার করলে পাঠকের অভিজ্ঞতা আরও স্বতন্ত্র হবে।</p>
-        </div>
-      </section>
+          <p class="dropcap">R</p>
+          <p>A mother tongue is the first language a person learns from birth, usually spoken by their family and community. It is not only a means of communication but also a foundation of identity, culture, and heritage. Through the mother tongue, children absorb traditions, values, and the unique worldview of their people.
 
-      <section id="ch2" class="chapter">
-        <h2>অধ্যায় ২ — গল্প</h2>
-        <div class="content two-col">
-          <p>গল্প ১: (এখানে আপনার গল্প লিখুন)। দীর্ঘ অনুচ্ছেদ থাকলে, ব্রাউজারে দুই কলাম মোড ভাল দেখায়।</p>
-          <p>গল্প ২: (আরেকটি গল্প) — আপনি চাইলে প্রতিটি অধ্যায়ে ছবি, কোট বা উদ্ধৃতি যোগ করতে পারেন।</p>
+The mother tongue plays a vital role in shaping thought, learning, and emotional expression. It connects generations, preserves history, and strengthens the sense of belonging. Respecting and nurturing one’s mother tongue ensures the survival of cultural diversity and enriches both personal and collective identity.</p>
         </div>
-      </section>
+        <div class="btnc">
+        <!-- Button to open the dialogue -->
+<button class="open-btn" onclick="openDialogue()">Open Dialogue</button>
 
-      <section id="ch3" class="chapter">
-        <h2>অধ্যায় ৩ — কবিতা</h2>
-        <div class="content">
-          <p>কবিতা ১: আমি নদীর ধারার মতো...</p>
-          <p class="small">অনুবাদ / নোট: এই স্থানে ছোট নোট যোগ করুন।</p>
-        </div>
-      </section>
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
 
-      <footer class="center muted small no-print" style="margin-top:20px">
-        প্রিন্ট-বান্ধব সংস্করণ: Ctrl+P দিয়ে প্রিন্ট করুন বা PDF হিসেবে সেভ করুন
-      </footer>
-    </article>
+<!-- Dialogue box -->
+<div class="dialogue-box" id="dialogue">
+  <h2>Hello!</h2>
+  <p>....Soon come</p>
+  <button class="close-btn" onclick="closeDialogue()">Close</button>
   </div>
+</div>
+      </section>     
+  </div>
+  <script>
+  function openDialogue() {
+    document.getElementById('dialogue').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  function closeDialogue() {
+    document.getElementById('dialogue').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
