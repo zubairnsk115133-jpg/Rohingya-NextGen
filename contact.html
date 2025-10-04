@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Ro NextGen</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1f6690;
+    }
+
+    /* Social links */
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .telegram { background: #0088cc; }
+    .whatsapp { background: #25D366; }
+    .facebook { background: #1877f2; }
+    .youtube { background: #ff0000; }
+
+    .social-links a:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+    .header-simple{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 16px;
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  position:relative;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Back button */
+.back-btn{
+  display:inline-grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  padding:6px;
+  border:0;
+  background:transparent;
+  border-radius:8px;
+  cursor:pointer;
+  transition:background .12s, transform .08s;
+  color:#111;
+}
+.back-btn:focus{ outline: 2px solid rgba(0,123,255,0.25); outline-offset:2px; }
+.back-btn:hover{ background: rgba(0,0,0,0.04); transform: translateX(-1px); }
+
+/* Title */
+.title{
+  font-size:16px;
+  margin:0;
+  font-weight:600;
+  color:#111;
+}
+  </style>
+</head>
+<body>
+<header class="header-simple">
+  <button class="back-btn" aria-label="Go back" onclick="goBack()">
+    <!-- SVG arrow -->
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <h1 class="title">Page Title</h1>
+</header>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <div class="container">
+    <h2>We’d love to hear from you!</h2>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> info@ronextgen.org</p>
+      <p><strong>Phone:</strong> +8801812-018842</p>
+      <p><strong>Address:</strong> Camp-09,Balukhali-1,Ukhiya</p>
+    </div>
+
+    <form action="#">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" placeholder="Type your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <a href="https://t.me/yourchannel" target="_blank" class="telegram">Join on Telegram</a>
+      <a href="https://wa.me/8801812018842" target="_blank" class="whatsapp">Chat on WhatsApp</a>
+      <a href="https://facebook.com/yourpage" target="_blank" class="facebook">Visit Facebook</a>
+      <a href="https://youtube.com/yourchannel" target="_blank" class="youtube">Watch on YouTube</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ro NextGen | All Rights Reserved</p>
+  </footer>
+<script>
+function goBack(){
+  if (window.history.length > 1){
+    window.history.back();
+  } else {
+    // fallback - change to a safe URL for your site
+    window.location.href = '/';
+  }
+}
+</script>
+</body>
+</html>
